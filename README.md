@@ -9,6 +9,9 @@ Online interpreter/compiler for programming languages
  - Activate venv:
 ```venv/Scripts/activate```
 
+ - Navigate to your project folder
+```cd plc```
+
  - Install requirements:
 ```pip install -r requirements.txt```
 
