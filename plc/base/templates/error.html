@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/error.css" %}"/>
+    <script defer src="{% static "js/app.js" %}"></script>
+    <script defer src="{% static "libs/trash.js" %}"></script>
+</head>
+<body>
+    <div class="logo" style="background-image: url(./img/logo.svg);"></div>
+
+    <section class="layers">
+        <div class="layers__container">
+            <div class="layers__item layer-1" style="background-image: url(./img/layer-1.jpg);"></div>
+            <div class="layers__item layer-2" style="background-image: url(./img/layer-2.png);"></div>
+            <div class="layers__item layer-3">
+                <div class="hero-content">
+                    <h1><span style="color: red; font-size: 70%;">ОШИБКА</span></h1>
+                    <h1>{{error.name}}</h1>
+                    <p>{{error.description}}</p>
+                    
+                </div>
+            </div>
+            <div class="layers__item layer-4">
+                <canvas class="rain"></canvas>
+            </div>
+            <div class="layers__item layer-5" style="background-image: url(./img/layer-5.png);"></div>
+            <div class="layers__item layer-6" style="background-image: url(./img/layer-6.png);"></div>
+        </div>
+    </section>
+
+</body>
+</html>
+</body>
+</html>

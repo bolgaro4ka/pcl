@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC</title>
+    <link rel="stylesheet" href="{% static "css/main.css" %}"/>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script type="module" defer>
+        (async ({ chrome, netscape }) => { if (!chrome && !netscape) await import('https://unpkg.com/@ungap/custom-elements'); const { default: HighlightedCode } = await import('https://unpkg.com/highlighted-code'); HighlightedCode.useTheme('github-dark'); })(self);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="blurWrapper">
+    <header>
+        <span class="logo"><a href="/">PLC</a></span>
+        <ul>
+            
+            <li><a href="/compiler">Выбрать другой компилятор/интерпритатор</a></li>
+            <li><button id="openPopup">Особенности использования</button></li>
+        </ul>
+    </header>
+    <!-- <textarea is="highlighted-code" cols="80" rows="12" language="python" tab-size="2" auto-height placeholder="Начните писать свой код здесь" id="code" name="code"></textarea> -->
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        
+        
+    <button type="submit">Запуск</button>
+    </form>
+    <div class="wrapper">
+    {% if notSupportInput %}
+    <div class="warming">
+        <p>Интерпритатор/компилятор {{comp.name}} не поддерживает ввод в консоль!</p>
+        <button onclick="document.getElementsByClassName('warming')[0].remove()">X</button>
+    </div>
+    {% endif %}
+    <div class="outAndErr">
+    <div class="output">
+        <h2>Вывод:</h2>
+        {%if clear_res %}
+            <pre>{{clear_res}}</pre>
+        {% else %}
+            <pre>Программа ничего не выводит</pre>
+        {% endif %}
+    </div>
+    <div class="errors">
+        <h2>Ошибки:</h2>
+        {%if error_res %}
+            <pre>{{error_res}}</pre>
+        {% else %}
+            <pre>Ошибок нету!</pre>
+        {% endif %}
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    <div id="popup">
+        <div id="headerPopup">
+            <h2>Особенности использования</h2>
+            <button id="closePopup">X</button>
+        </div>
+        <p>1. Некоторые компиляторы не поддерживают ввод в консоль.</p>
+        <p>2. То что введено в консоль автоматически превращяется в нужный тип, а не как в обычно в только строку</p>
+        <p>3. Из пункта 2 следуется такие правила:</p>
+        <p>&emsp;3.1. Строки толжны писаться с кавычками иначе строка будет интерпритироваться как переменная</p>
+        <p>&emsp;3.2. Если введены числа, словари, списки, множества и т.д. (без кавычек) то дополнительные преобразования не требуются</p>
+    </div>
+</body>
+</html>

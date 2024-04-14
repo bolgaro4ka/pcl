@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/index.css" %}"/>
+    <script defer src="{% static "js/app.js" %}"></script>
+    <script defer src="{% static "libs/trash.js" %}"></script>
+</head>
+<body>
+    <div class="logo" style="background-image: url(./img/logo.svg);"></div>
+
+    <section class="layers">
+        <div class="layers__container">
+            <div class="layers__item layer-1" style="background-image: url({% static "img/back1.png" %});"></div>
+            <div class="layers__item layer-2" style="background-image: url({% static "img/back2.png" %});"></div>
+            <div class="layers__item layer-3">
+                <div class="hero-content">
+                    <h1>Компилятор языков<span>Программирования</span></h1>
+                    <p class="hero-content__p">Python, Node.JS и другие</p>
+                    <button class="button-start" onclick="window.location.href = '/compiler'">Поехали</button>
+                </div>
+            </div>
+            <div class="layers__item layer-4">
+                <canvas class="rain"></canvas>
+            </div>
+            <div class="layers__item layer-5" style="background-image: url({% static "img/back3.png" %});"></div>
+            <div class="layers__item layer-6" style="background-image: url();"></div>
+        </div>
+    </section>
+
+</body>
+</html>

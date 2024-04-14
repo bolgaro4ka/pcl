@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/choose.css" %}"/>
+    <script defer src="{% static "js/app.js" %}"></script>
+    <script defer src="{% static "libs/trash.js" %}"></script>
+</head>
+<body>
+    <div class="logo" style="background-image: url(./img/logo.svg);"></div>
+
+    <section class="layers">
+        <div class="layers__container">
+            <div class="layers__item layer-1" style="background-image: url({% static "img/back1-3.png" %});"></div>
+            <div class="layers__item layer-2" style="background-image: url({% static "img/back2-1.png" %});"></div>
+            <div class="layers__item layer-5" style="background-image: url({% static "img/back3-1.png" %});"></div>
+            
+            <div class="layers__item layer-3">
+                <div class="hero-content">
+                    {% for item in compilers%}
+                    <div class="card">
+                        <h2>{{item}}</h2>
+                        <p>{{item.text}}</p>
+                        <button class="button-start" onclick="window.location.href = '/compiler/{{item.short_name}}'">Перейти</button>
+                    </div>
+                        
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="layers__item layer-4">
+                <canvas class="rain"></canvas>
+            </div>
+            <div class="layers__item layer-6" style="background-image: url({% static "img/back4-1.png" %});"></div>
+        </div>
+    </section>
+
+</body>
+</html>
+</body>
+</html>

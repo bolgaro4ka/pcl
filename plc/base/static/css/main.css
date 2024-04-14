@@ -1,0 +1,159 @@
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+}
+
+header {display: flex;
+    justify-content: space-between;
+    align-items: center;
+padding: 10px 30px;
+background-color: black;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+#openPopup {
+    padding: 10px;
+    background-color: #2f333a;
+    border: none;
+    border-radius: 2px;
+    color: #eee;
+    
+}
+
+form {display: flex; flex-wrap: wrap;justify-content: center;}
+
+form #id_code {
+    width: 70vw;
+    height: 50vh;
+    padding: 2px;
+    background-color: #0d1117 !important;
+}
+
+
+form #id_stdinput {
+    width: 28vw;
+    height: 50vh;
+    padding: 2px;
+    background-color: #0d1117 !important;
+    color: #eee;
+}
+
+form button[type=submit] {
+    width: 98vw;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    background-color: #2f333a !important;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+form p > *{display: block;}
+
+.warming {
+    background-color: #dd0;
+    border: 2px solid #cc0;
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.wrapper {
+    width: 98vw;
+    margin: 0 auto;
+}
+
+.outAndErr {
+    display: flex;
+}
+
+.output {width: 50%;    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;}
+.errors {width: 50%;    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;}
+
+.output h2 {
+    background-color: green;
+    padding: 5px;
+}
+
+.errors h2 {
+    background-color: red;
+    padding: 5px;
+}
+
+.logo {
+    font-size: 150%;
+}
+
+body {
+    background: #080004 !important;
+    height: 100vh;
+}
+
+.errors pre{
+    color: #ddd;
+    overflow-x: visible;
+}
+
+.output pre{
+    color: #ddd;
+    overflow-x: visible;
+}
+
+#popup {
+    display: none;
+    position: absolute;
+    background-color: #0d1117;
+    color: #ddd;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    min-width: 600px;
+    transition: all 2s;
+    font-family: 'Roboto';
+}
+
+#headerPopup {
+    display: flex;
+    justify-content: space-between;
+    
+}
+#popup button {
+    background-color: #2f333a;
+    border: none;
+    padding: 10px;
+    color: #ddd;
+}
+
+#popup button:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
