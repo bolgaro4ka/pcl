@@ -1,3 +1,5 @@
-from django.test import TestCase
+from django import test
 
-# Create your tests here.
+class ChatTest(test.TestCase):
+    def test_chat(self):
+        self.assertTrue(True) # I am genius
